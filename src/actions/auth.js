@@ -9,6 +9,7 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL
 } from "./types";
+import { host } from "../constants"
 
 //Cheak Token and load user
 export const loadUser = () => (dispatch, getState) => {
@@ -16,7 +17,7 @@ export const loadUser = () => (dispatch, getState) => {
   dispatch({ type: USER_LOADING });
 
   axios
-    .get("https://store-our.herokuapp.com/api/auth/user", tokenConfig(getState))
+    .get(`${host}/api/auth/user`, tokenConfig(getState))
     .then(res => {
       dispatch({
         type: USER_LOADED,
@@ -43,7 +44,7 @@ export const login = (username, password) => dispatch => {
   console.log(body);
 
   axios
-    .post("https://store-our.herokuapp.com/api/auth/login", body, config)
+    .post(`${host}/api/auth/login`, body, config)
     .then(res => {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -102,7 +103,7 @@ export const profileRegister = ({
 
   axios
     .post(
-      "https://store-our.herokuapp.com/api/auth/profileRegister",
+      `${host}//api/auth/profileRegister`,
       body,
       tokenConfig(getState)
     )
@@ -127,7 +128,7 @@ export const profileRegister = ({
 //LOGOUT
 export const logout = () => (dispatch, getState) => {
   axios
-    .post("https://store-our.herokuapp.com/api/auth/logout", null, tokenConfig(getState))
+    .post(`${host}//api/auth/logout`, null, tokenConfig(getState))
     .then(res => {
       dispatch({
         type: LOGOUT_SUCCESS,

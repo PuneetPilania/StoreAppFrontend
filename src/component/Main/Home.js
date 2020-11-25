@@ -15,14 +15,9 @@ class Home extends Component {
     }
     componentDidMount() {
         guestAxios.get(`${getStore}`).then(res => {
-            res.data.map(item => {
-                const data = JSON.parse(item.extraData)
-                item.extraData = JSON.parse(item.extraData)
-                console.log(item.extraData)
-                this.setState({
-                    stores: [...this.state.stores, item],
-                    loading: false
-                })
+            this.setState({
+                stores: res.data,
+                loading: false
             })
         })
     }
@@ -38,7 +33,7 @@ class Home extends Component {
                                 <Row>
                                     <Col>
                                         <h3>
-                                            {data.extraData.name}
+                                            {data.name}
                                         </h3>
                                     </Col>
                                     <Col>

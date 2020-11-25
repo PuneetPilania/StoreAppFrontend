@@ -19,7 +19,7 @@ class DetailPage extends Component {
     }
     componentDidMount() {
         this.setState({
-            source: `https://maps.google.com/maps?q=${this.state.data.extraData.lat},${this.state.data.extraData.lon}&hl=es;z=14&output=embed`
+            source: `https://maps.google.com/maps?q=${this.state.data.lat},${this.state.data.lon}&hl=es;z=14&output=embed`
         })
         guestAxios.post(`${getProduct}`, { id: this.state.data.id }).then(res => this.setState({
             productCategory: res.data.productCategory,
@@ -32,7 +32,6 @@ class DetailPage extends Component {
     render() {
         const { data, source, productCategory, productModal, productFilter, product } = this.state
         return <div>
-            {console.log(`${host}` + data.coverPhoto)}
             <img src={`${host}` + data.coverPhoto} style={{ width: "100%", height: "600px" }} />
             <br />
             <div style={{ textAlign: "center" }}>
@@ -48,7 +47,7 @@ class DetailPage extends Component {
                   </h1>
 
                 <br />
-                <h4>{data.extraData.about}</h4>
+                <h4>{data.aboutUs}</h4>
                 <br />
                 <br />
 
@@ -126,7 +125,7 @@ class DetailPage extends Component {
                                         fontFamily: "Great Vibes",
                                     }}
                                 >
-                                    {data.extraData.storeHour.map(item => <div>
+                                    {JSON.parse(data.storeHour).map(item => <div>
                                         {item.day}<br />
                                     </div>)}
                                 </h4>
@@ -138,7 +137,7 @@ class DetailPage extends Component {
                                         fontFamily: "Great Vibes",
                                     }}
                                 >
-                                    {data.extraData.storeHour.map(item => <div>
+                                    {JSON.parse(data.storeHour).map(item => <div>
                                         {item.startTime} - {item.endTime}<br />
                                     </div>)}
                                 </h4>
@@ -162,7 +161,7 @@ class DetailPage extends Component {
             </div>
             <br />
             <div style={{ textAlign: "center" }}>
-                © {data.extraData.name}
+                © {data.name}
             </div>
             <br />
 
