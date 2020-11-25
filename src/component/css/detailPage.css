@@ -1,0 +1,24 @@
+.productCategory{
+    background-color: #0086b3;
+    padding: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin:20px;
+}
+
+.productName{
+    color:white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    /* borderRadius: 8,
+    elevation: 1,
+    
+    marginLeft: "8%",
+    marginTop: 25,
+    fontSize: 9,
+    textAlign: "center",
+    paddingTop: 5,
+    fontWeight: "bold", */

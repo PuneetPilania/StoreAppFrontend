@@ -1,0 +1,75 @@
+/* Navbar auth button  */
+.auth {
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.auth:active {
+  outline: none;
+}
+
+.auth:focus {
+  outline: 0;
+}
+
+.auth {
+  display: inline-block;
+  line-height: 0.1;
+  padding-bottom: 2px;
+}
+
+.auth:hover {
+  border-bottom: 10px solid rgba(219, 238, 222);
+}
+
+/* inputs */
+
+.actions input {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.actions input:active,
+.actions input:focus {
+  outline: none;
+}
+
+.actions button {
+  width: 100%;
+  height: 50px !important;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: green !important;
+  color: white;
+}
+
+.actions .auth-otp {
+  width: 100%;
+  height: 50px !important;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: rgb(53, 109, 242) !important;
+  color: white;
+}
+
+.forgot-password {
+  font-size: 16px;
+}
+
+.actions span {
+  font-weight: 700;
+  color: rgb(53, 109, 242) !important;
+}
+
+.actions button:active,
+.actions button:focus {
+  outline: none;
+}
